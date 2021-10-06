@@ -59,4 +59,5 @@ are available at the same time.
 **Task 3 demonstration**
 <br>
 ![](task3.gif)
-
+<br>
+![](task3_terminal.gif)

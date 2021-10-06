@@ -124,7 +124,7 @@ int main(void)
  * This task function simulates a dining philosopher. The philosopher eats incredibly delicious italian food
  * for some time only if both forks on his sides are available (binary semaphores in this case). 
  * When the philosopher finishes eating, he puts the forks on the table (releases the semaphores) and 
- * thinking for a while. Blinking one of the LEDs indicates that the philosopher is eating.
+ * thinks for a while. Blinking one of the LEDs indicates that the philosopher is eating.
  * The next solution was used to avoid deadlock: a philosopher is allowed to pick
  * their forks only if both are available at the same time.
  *
@@ -177,8 +177,8 @@ void uart_transmitter(void *param)
 			// It isn't necessary here to take mutex because only this task uses UART
 			xSemaphoreTake(uart_mutex, portMAX_DELAY); 
 		
-			sprintf(str, "Philosopher %d is eating.\r\n", task_num + 1);
-			HAL_UART_Transmit(&huart2, (uint8_t*)str, sizeof(str) + 1, UART_TIMEOUT); // +1 is needed to transmit '\0'
+			sprintf(str, "Philosopher %d is eating.\n\r", task_num + 1);
+			HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), UART_TIMEOUT);
 		
 			xSemaphoreGive(uart_mutex);
 		}
