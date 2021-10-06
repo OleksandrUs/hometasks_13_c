@@ -29,7 +29,7 @@
 #define GREEN_LED_2 	GPIO_PIN_15
 
 /*
- * The size of the stack (in 4-byte words) for created static tasks.
+ * The size of the stack (in 4-byte words) for created tasks.
  */
 #define STACK_SIZE 32U
 
