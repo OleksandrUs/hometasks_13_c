@@ -43,3 +43,21 @@ available space on the queue. The second task reads data from the queue unless q
 <br>
 ![](task2.gif)
 
+
+
+**Task 3 notes**
+
+The program simulates the dining philosophers. The philosopher (task) eats incredibly delicious italian food
+for some time (does some useful work) only if both forks on his sides are available (binary semaphores in this case). 
+When the philosopher finishes eating, he puts the forks on the table (releases the semaphores) and 
+thinking for a while. Blinking one of five LEDs, each of which impersonates the philosophers, indicates,
+that the philosopher is eating. The serial number of the philosoper that is eating is sent via UART.
+The next solution was used to avoid deadlock: a philosopher is allowed to pick their forks only if both
+are available at the same time.
+<br>
+
+**Task 3 demonstration**
+<br>
+![](task3.gif)
+<br>
+![](task3_terminal.gif)
